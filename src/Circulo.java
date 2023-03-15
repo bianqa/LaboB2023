@@ -1,23 +1,29 @@
 public class Circulo {
-    private float radio;
+    private double radio;
 
     public Circulo(){
-        this.radio = 2f;
+        this.radio = 2;
     }
 
-    public Circulo (float radio){
-        radio = 2f;
-    }
-
-    public float getRadio() {
-        return radio;
-    }
-
-    public void setRadio(float radio) {
+    public Circulo (double radio){
         this.radio = radio;
     }
 
-    public float calcularRadio(float radio){
-        radio = Math.PI * (radio**2);
+    public double getRadio() {
+        return radio;
     }
+
+    public void setRadio(double radio) {
+        this.radio = radio;
+    }
+
+    public double calcularArea(){
+        return Math.PI*Math.pow(radio,2);
+    }
+
+    public double calcularPerimetro(){
+        return 2*Math.PI*radio;
+    }
+
 }
+
