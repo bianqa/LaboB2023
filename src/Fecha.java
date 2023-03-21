@@ -1,12 +1,17 @@
+import java.text.DateFormatSymbols;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Calendar;
 public class Fecha {
     private int dia;
     private int mes;
     private int anio;
 
     public Fecha(){
-        this.dia = 1;
-        this.mes = 1;
-        this.anio = 1900;
+        this.dia = 21;
+        this.mes = 3;
+        this.anio = 2023;
     }
 
     public Fecha (int dia, int mes, int anio){
@@ -90,7 +95,18 @@ public class Fecha {
         }
     }
 
-    public void largo(){
+    public String getMonth() {
+        return new DateFormatSymbols().getMonths()[mes-1];
     }
+
+    public void largo(){
+        Date date = new Date(anio-1900,mes-1,dia);
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Format f = new SimpleDateFormat("EEEE");
+        String str = f.format(date);
+        System.out.println(str + " " + dia + " de " + getMonth() + " de " + anio);
+    }
+
 
 }

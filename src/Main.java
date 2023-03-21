@@ -8,5 +8,7 @@ public class Main {
         System.out.println("El radio del circulo por parametro es: " + circulo2.getRadio());
         System.out.println("Area del circulo por parametro es: " + circulo2.calcularArea());
         System.out.println("Perimetro del circulo por parametro es: " + circulo2.calcularPerimetro());
+        Fecha fecha = new Fecha();
+        fecha.largo();
     }
 }
