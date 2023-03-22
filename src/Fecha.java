@@ -115,6 +115,20 @@ public class Fecha {
         }
     }
 
-    
+    public boolean menor_que(Fecha fecha2){
+        if (anio < fecha2.anio){
+            return true;
+        } else if (anio == fecha2.anio){
+            if (mes < fecha2.mes){
+                return true;
+            } else if (mes == fecha2.mes){
+                return dia < fecha2.dia;
+            } else{
+                return false;
+            }
+        } else{
+            return false;
+        }
+    }
 
 }

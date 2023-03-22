@@ -34,8 +34,8 @@ public class Persona {
     }
 
     public void mostrar_datos(){
-        System.out.println(nombre);
-        System.out.println(edad);
-        System.out.println(direccion);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Edad: " + edad);
+        System.out.println("Dirección: " + direccion);
     }
 }
