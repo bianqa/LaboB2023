@@ -1,15 +1,15 @@
 public class Cancion {
     private String titulo;
-    private String autor;
+    private Persona autor;
 
-    public Cancion (String titulo, String autor){
+    public Cancion (String titulo, Persona autor){
         this.titulo = titulo;
         this.autor = autor;
     }
 
     public Cancion (){
         titulo = "";
-        autor = "";
+        autor = new Persona("", 0, "");
     }
 
     public String getTitulo() {
@@ -20,11 +20,11 @@ public class Cancion {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
+    public Persona getAutor() {
         return autor;
     }
 
-    public void setAutor(String autor) {
+    public void setAutor(Persona autor) {
         this.autor = autor;
     }
 }

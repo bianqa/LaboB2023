@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Cafetera {
     private int cant_max;
     private int cant_act;
@@ -15,7 +13,13 @@ public class Cafetera {
     }
 
     public Cafetera (int cant_max, int cant_act){
-        if (cant_act > cant_max) cant_act = cant_max;
+        this.cant_max = 1000;
+        if (cant_act > cant_max) {
+            this.cant_act = cant_max;
+        } else{
+            this.cant_act = 0;
+            this.cant_max = 0;
+        }
     }
 
     public int getCant_max() {
@@ -44,8 +48,8 @@ public class Cafetera {
             cant_act = cant_act - capacidad;
             System.out.println("Se han servido " + capacidad + "c.c a la taza.");
         } else {
-            cant_act = 0;
             System.out.println("Se han servido " + cant_act + "c.c a la taza.");
+            cant_act = 0;
         }
     }
 
@@ -55,7 +59,12 @@ public class Cafetera {
     }
 
     public void agregar_cafe (int cantidad){
-        cant_act = cantidad;
-        System.out.println("Se han agregado " + cantidad + "c.c a la cafetera.");
+        if ((cantidad + cant_act) <= cant_max){
+            cant_act = cantidad;
+            System.out.println("Se han agregado " + cantidad + "c.c a la cafetera.");
+        } else{
+            cant_act = cant_max;
+            System.out.println("Se han agregado " + (cantidad - cant_act) + "c.c a la cafetera.");
+        }
     }
 }
