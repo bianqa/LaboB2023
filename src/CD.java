@@ -16,28 +16,15 @@ public class CD {
     }
 
     public int numero_canciones(){
-       if (canciones.size() > 0){
-           return canciones.size();
-       } else{
-           return 0;
-       }
+        return canciones.size();
     }
 
-    public Cancion ver_cancion (int posicion){
-        if (canciones.size() > 0){
-            Cancion cancion = canciones.get(posicion-1);
-            return cancion;
-        } else{
-            return null;
-        }
+    public void ver_cancion (int posicion){
+        System.out.println(canciones.get(posicion).getTitulo());
     }
 
     public void graba_cancion (int posicion, Cancion nueva_cancion){
-        if (canciones.size() > 0){
-            canciones.set((posicion-1), nueva_cancion);
-        } else{
-            System.out.println("La lista de canciones está vacia.");
-        }
+        canciones.set(posicion, nueva_cancion);
     }
 
     public void agrega (Cancion cancion){
@@ -45,10 +32,6 @@ public class CD {
     }
 
     public void elimina (int posicion){
-        if ((canciones.size() >= (posicion - 1)) && (canciones.size() > 0)){
-            canciones.remove(posicion-1);
-        } else{
-            System.out.println("La lista de canciones está vacia.");
-        }
+        canciones.remove(posicion);
     }
 }

@@ -1,23 +1,24 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Alumno {
     private String nombre;
     private String apellido;
     private Fecha fecha_nacimiento;
-    private ArrayList<Double> lista_notas;
+    private ArrayList<Materia> materias;
 
     public Alumno (){
         nombre = "";
         apellido = "";
         fecha_nacimiento = new Fecha();
-        lista_notas = new ArrayList<Double>();
+        materias = new ArrayList<Materia>();
     }
 
-    public Alumno (String nombre, String apellido, Fecha fecha_nacimiento, ArrayList<Double> lista_notas){
+    public Alumno (String nombre, String apellido, Fecha fecha_nacimiento, ArrayList<Materia> materias){
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha_nacimiento = fecha_nacimiento;
-        this.lista_notas = lista_notas;
+        this.materias = materias;
     }
 
     public String getNombre() {
@@ -44,35 +45,65 @@ public class Alumno {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public ArrayList<Double> getLista_notas() {
-        return lista_notas;
+    public ArrayList<Materia> materias() {
+        return materias;
     }
 
-    public void setLista_notas(ArrayList<Double> lista_notas) {
-        this.lista_notas = lista_notas;
+    public void setLista_notas(ArrayList<Materia> materias) {
+        this.materias = materias;
     }
 
-    public void agregar_nota (double nota){
-        lista_notas.add(nota);
-    }
-
-    public double menor_nota (){
-        double menor_nota1 = lista_notas.get(0);
-        for (double nota : lista_notas){
-            if (nota < menor_nota1){
-                menor_nota1 = nota;
+    public void agregar_nota (String materia, double nota){
+        for (Materia materia1 : materias) {
+            if (Objects.equals(materia1.getNombre(), materia)) {
+                materia1.getNotas().add(nota);
             }
         }
-        return menor_nota1;
     }
 
-    public double mayor_nota (){
-        double mayor_nota1 = lista_notas.get(0);
-        for (double nota : lista_notas){
-            if (nota > mayor_nota1){
-                mayor_nota1 = nota;
+    public Double menor_nota (String materia){
+        double menor = 10;
+        for (Materia materia1 : materias){
+            if (Objects.equals(materia1.getNombre(), materia)){
+                for (Double nota : materia1.getNotas()){
+                    if (nota < menor){
+                        menor = nota;
+                    }
+                }
             }
         }
-        return mayor_nota1;
+        return menor;
+    }
+
+    public double mayor_nota (String materia){
+        double mayor = 1;
+        for (Materia materia1 : materias){
+            if (Objects.equals(materia1.getNombre(), materia)){
+                for (Double nota : materia1.getNotas()){
+                    if (nota > mayor){
+                        mayor = nota;
+                    }
+                }
+            }
+        }
+        return mayor;
+    }
+
+    public void agregar_materia (String nueva_materia){
+        materias.add(new Materia (nueva_materia, null));
+    }
+
+    public double promedio_materia (String materia){
+        double promedio = 0;
+        int cont = 0;
+        for (Materia materia1 : materias){
+            if (Objects.equals(materia1.getNombre(), materia)){
+                for (double nota : materia1.getNotas()){
+                    promedio += nota;
+                    cont ++;
+                }
+            }
+        }
+        return promedio / cont;
     }
 }
