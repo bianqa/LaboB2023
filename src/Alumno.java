@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Alumno {
     private String nombre;
@@ -53,36 +52,24 @@ public class Alumno {
         this.materias = materias;
     }
 
-    public void agregar_nota (String materia, double nota){
-        for (Materia materia1 : materias) {
-            if (Objects.equals(materia1.getNombre(), materia)) {
-                materia1.getNotas().add(nota);
-            }
-        }
-    }
-
-    public Double menor_nota (String materia){
+    public Double menor_nota (){
         double menor = 10;
         for (Materia materia1 : materias){
-            if (Objects.equals(materia1.getNombre(), materia)){
-                for (Double nota : materia1.getNotas()){
-                    if (nota < menor){
-                        menor = nota;
-                    }
+            for (double nota : materia1.getNotas()){
+                if (nota < menor){
+                    menor = nota;
                 }
             }
         }
         return menor;
     }
 
-    public double mayor_nota (String materia){
+    public double mayor_nota (){
         double mayor = 1;
         for (Materia materia1 : materias){
-            if (Objects.equals(materia1.getNombre(), materia)){
-                for (Double nota : materia1.getNotas()){
-                    if (nota > mayor){
-                        mayor = nota;
-                    }
+            for (double nota : materia1.getNotas()){
+                if (nota > mayor){
+                    mayor = nota;
                 }
             }
         }
@@ -93,15 +80,13 @@ public class Alumno {
         materias.add(new Materia (nueva_materia, null));
     }
 
-    public double promedio_materia (String materia){
+    public double promedio_global (){
         double promedio = 0;
         int cont = 0;
-        for (Materia materia1 : materias){
-            if (Objects.equals(materia1.getNombre(), materia)){
-                for (double nota : materia1.getNotas()){
-                    promedio += nota;
-                    cont ++;
-                }
+        for (Materia materia : materias){
+            for (double nota : materia.getNotas()){
+                promedio += nota;
+                cont ++;
             }
         }
         return promedio / cont;

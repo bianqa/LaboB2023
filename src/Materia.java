@@ -24,4 +24,38 @@ public class Materia {
     public void setNotas(ArrayList<Double> notas) {
         this.notas = notas;
     }
+
+    public void agregar_nota (double nota){
+        notas.add(nota);
+    }
+
+    public double promedio_materia (){
+        double promedio = 0;
+        int cont = 0;
+        for (double nota : notas){
+            promedio += nota;
+            cont ++;
+        }
+        return promedio / cont;
+    }
+
+    public double menor_nota (){
+        double menor = 10;
+        for (double nota : notas){
+            if (nota < menor){
+                menor = nota;
+            }
+        }
+        return menor;
+    }
+
+    public double mayor_nota (){
+        double mayor = 10;
+        for (double nota : notas){
+            if (nota > mayor){
+                mayor = nota;
+            }
+        }
+        return mayor;
+    }
 }
