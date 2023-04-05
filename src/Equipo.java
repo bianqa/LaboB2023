@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Equipo {
@@ -6,6 +7,14 @@ public class Equipo {
     private Jugador capitan;
     private ArrayList<Jugador> jugadores;
     private ArrayList<Horario> horarios;
+
+    public Equipo (String nombre, String barrio, Jugador capitan, ArrayList<Horario> horarios){
+        this.nombre = nombre;
+        this.barrio = barrio;
+        this.capitan = capitan;
+        this.jugadores = new ArrayList<Jugador>();
+        this.horarios = horarios;
+    }
 
     public Equipo (String nombre, String barrio, Jugador capitan, ArrayList<Jugador> jugadores, ArrayList<Horario> horarios){
         this.nombre = nombre;
@@ -74,5 +83,32 @@ public class Equipo {
             }
         }
         return true;
+    }
+
+    public void agregar_jugador (Jugador jugador){
+        if (jugadores.size() > 9){
+            System.out.println("Equipo lleno. No se agregará el jugador.");
+        } else{
+            boolean puede_entrar = true;
+            for (Jugador jugador2 : jugadores){
+                if (jugador2.getNro_camiseta() == jugador.getNro_camiseta()){
+                    puede_entrar = false;
+                }
+            }
+            if (puede_entrar){
+                jugadores.add(jugador);
+                System.out.println("Jugador agregado.");
+            } else{
+                System.out.println("Ya hay un jugador con ese número de camiseta. No se agregará el jugador.");
+            }
+        }
+    }
+
+    public void eliminar_jugador (Jugador jugador){
+        for (Jugador jugador1 : jugadores){
+            if (jugador1 == jugador){
+                jugadores.remove(jugador);
+            }
+        }
     }
 }

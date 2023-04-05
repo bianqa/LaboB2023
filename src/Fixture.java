@@ -2,9 +2,11 @@ import java.util.ArrayList;
 
 public class Fixture {
     private ArrayList<Partido> partidos;
+    private ArrayList<Equipo> equipos;
 
-    public Fixture (ArrayList<Partido> partidos){
+    public Fixture (ArrayList<Partido> partidos, ArrayList<Equipo> equipos){
         this.partidos = partidos;
+        this.equipos = equipos;
     }
 
     public ArrayList<Partido> getPartidos() {
@@ -13,6 +15,14 @@ public class Fixture {
 
     public void setPartidos(ArrayList<Partido> partidos) {
         this.partidos = partidos;
+    }
+
+    public ArrayList<Equipo> getEquipos() {
+        return equipos;
+    }
+
+    public void setEquipos(ArrayList<Equipo> equipos) {
+        this.equipos = equipos;
     }
 
     public void mostrar_fixture (){
@@ -50,25 +60,7 @@ public class Fixture {
     }
 
     public void agregar_partido (Partido partido){
-        if (partidos.size() == 0){
-            partidos.add(partido);
-        } else{
-            for (Partido partido1 : partidos){
-                if (partido.getDia() == partido1.getDia()){
-                    if (partido.getHorario().isManana() && partido1.getHorario().isManana()){
-                        System.out.println("No se puede agregar el partido porque ya hay un partido programado ese día y a ese horario.");
-                    } else if (partido.getHorario().isTarde() && partido1.getHorario().isTarde()){
-                        System.out.println("No se puede agregar el partido porque ya hay un partido programado ese día y a ese horario.");
-                    } else if (partido.getHorario().isNoche() && partido1.getHorario().isNoche()){
-                        System.out.println("No se puede agregar el partido porque ya hay un partido programado ese día y a ese horario.");
-                    } else{
-                        partidos.add(partido);
-                    }
-                } else{
-                    partidos.add(partido);
-                }
-            }
-        }
+
     }
 
     public void eliminar_partido (Partido partido){
