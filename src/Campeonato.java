@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class Fixture {
+public class Campeonato {
     private ArrayList<Partido> partidos;
     private ArrayList<Equipo> equipos;
 
-    public Fixture (ArrayList<Partido> partidos, ArrayList<Equipo> equipos){
-        this.partidos = partidos;
+    public Campeonato (ArrayList<Equipo> equipos){
+        this.partidos = new ArrayList<Partido>();
         this.equipos = equipos;
     }
 
@@ -59,15 +59,16 @@ public class Fixture {
         }
     }
 
-    public void agregar_partido (Partido partido){
-
-    }
-
-    public void eliminar_partido (Partido partido){
-        for (Partido partido1 : partidos){
-            if (partido1 == partido){
-                partidos.remove(partido);
+    public void agregar_equipo(Equipo equipo){
+        boolean esta = false;
+        for (Equipo equipo1 : equipos){
+            if (equipo1 == equipo){
+                System.out.println("Ya existe ese equipo.");
+                esta = true;
             }
+        }
+        if (esta == false){
+            equipos.add(equipo);
         }
     }
 }

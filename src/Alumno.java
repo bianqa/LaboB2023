@@ -1,31 +1,22 @@
 import java.util.ArrayList;
 
-public class Alumno {
-    private String nombre;
+public class Alumno extends Persona{
     private String apellido;
     private Fecha fecha_nacimiento;
     private ArrayList<Materia> materias;
 
     public Alumno (){
-        nombre = "";
+        super();
         apellido = "";
         fecha_nacimiento = new Fecha();
         materias = new ArrayList<Materia>();
     }
 
-    public Alumno (String nombre, String apellido, Fecha fecha_nacimiento, ArrayList<Materia> materias){
-        this.nombre = nombre;
+    public Alumno (String nombre, int edad, String direccion, String apellido, Fecha fecha_nacimiento, ArrayList<Materia> materias){
+        super(nombre, edad, direccion);
         this.apellido = apellido;
         this.fecha_nacimiento = fecha_nacimiento;
         this.materias = materias;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getApellido() {

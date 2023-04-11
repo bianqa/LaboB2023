@@ -1,7 +1,11 @@
-public class Rectangulo {
-
+public class Rectangulo extends FiguraGeometrica{
     private double base;
     private double altura;
+
+    public Rectangulo (){
+        base = 1;
+        altura = 1;
+    }
 
     public Rectangulo (double radio){
         this.base = base;
@@ -24,11 +28,13 @@ public class Rectangulo {
         this.altura = altura;
     }
 
-    public double calcularArea(){
+    @Override
+    public double calcularArea() {
         return base*altura;
     }
 
-    public double calcularPerimetro(){
-        return (base+altura)*2;
+    @Override
+    public double calcularPerimetro() {
+        return base*2 + altura*2;
     }
 }

@@ -3,6 +3,12 @@ public class Persona {
     private int edad;
     private String direccion;
 
+    public Persona (){
+        nombre = "";
+        edad = 1;
+        direccion = "";
+    }
+
     public Persona (String nombre, int edad, String direccion){
         this.nombre = nombre;
         this.edad = edad;

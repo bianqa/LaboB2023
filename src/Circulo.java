@@ -1,8 +1,8 @@
-public class Circulo {
+public class Circulo extends FiguraGeometrica{
     private double radio;
 
     public Circulo(){
-        this.radio = 2;
+        radio = 2;
     }
 
     public Circulo (double radio){
@@ -17,13 +17,14 @@ public class Circulo {
         this.radio = radio;
     }
 
-    public double calcularArea(){
+    @Override
+    public double calcularArea() {
         return Math.PI*Math.pow(radio,2);
     }
 
-    public double calcularPerimetro(){
+    @Override
+    public double calcularPerimetro() {
         return 2*Math.PI*radio;
     }
-
 }
 
