@@ -4,19 +4,22 @@ public class Alumno extends Persona{
     private String apellido;
     private Fecha fecha_nacimiento;
     private ArrayList<Materia> materias;
+    private String division;
 
     public Alumno (){
         super();
         apellido = "";
         fecha_nacimiento = new Fecha();
         materias = new ArrayList<Materia>();
+        division = "1° A";
     }
 
-    public Alumno (String nombre, int edad, String direccion, String apellido, Fecha fecha_nacimiento, ArrayList<Materia> materias){
+    public Alumno (String nombre, int edad, String direccion, String apellido, Fecha fecha_nacimiento, ArrayList<Materia> materias, String division){
         super(nombre, edad, direccion);
         this.apellido = apellido;
         this.fecha_nacimiento = fecha_nacimiento;
         this.materias = materias;
+        this.division = division;
     }
 
     public String getApellido() {
