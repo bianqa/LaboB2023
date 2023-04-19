@@ -6,26 +6,19 @@ public class Pedido {
     private Persona persona;
     private Date fecha_hora;
     private boolean entregado;
-    private int descuento;
 
     public Pedido (){
         plato = new Plato();
         persona = new Persona();
-        fecha_hora = new Date();
+        fecha_hora = new Date((2023-1900),(4-1), 19, 1, 1 , 0);
         entregado = false;
-        descuento = 20;
     }
 
-    public Pedido (Plato plato, Persona persona, Date fecha_hora, boolean entregado, int descuento){
+    public Pedido (Plato plato, Persona persona, Date fecha_hora, boolean entregado){
         this.plato = plato;
         this.persona = persona;
         this.fecha_hora = fecha_hora;
         this.entregado = entregado;
-        if (descuento < 0){
-            this.descuento = 0;
-        } else{
-            this.descuento = descuento;
-        }
     }
 
     public Plato getPlato() {
@@ -58,13 +51,5 @@ public class Pedido {
 
     public void setEntregado(boolean entregado) {
         this.entregado = entregado;
-    }
-
-    public int getDescuento() {
-        return descuento;
-    }
-
-    public void setDescuento(int descuento) {
-        this.descuento = descuento;
     }
 }

@@ -1,5 +1,9 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.text.DateFormatSymbols;
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class Bufe {
@@ -73,6 +77,30 @@ public class Bufe {
     }
 
     public void mostrar_platos (){
+        Date hoy = new Date();
+        hoy = Calendar.getInstance().getTime();
+        SimpleDateFormat fecha = new SimpleDateFormat("ddMMyyyy");
+        String fecha_hoy = fecha.format(hoy);
+        for (Pedido pedido : pedidos){
+            String fecha_pedido = fecha.format(pedido.getFecha_hora());
+            System.out.println(fecha_pedido);
+            if (fecha_hoy.equals(fecha_pedido)){
+                System.out.println("Nombre plato: " + pedido.getPlato().getNombre());
+                if (pedido.getPersona() instanceof Profesor){
+                    double descuento = ((Profesor)pedido.getPersona()).getDescuento();
+                    System.out.println("Precio original: " + pedido.getPlato().getPrecio());
+                    System.out.println("Precio con descuento: " + ());
+                }
+            }
+        }
+    }
 
+    public static void main(String[] args) {
+        Bufe bufe = new Bufe();
+        Date date = new Date(1,(1-1),1,1,1,1);
+        System.out.println(date);
+        Pedido pedido = new Pedido();
+        bufe.agregar_pedido(pedido);
+        bufe.mostrar_platos();
     }
 }

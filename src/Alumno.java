@@ -38,12 +38,24 @@ public class Alumno extends Persona{
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public ArrayList<Materia> materias() {
+    public void setLista_notas(ArrayList<Materia> materias) {
+        this.materias = materias;
+    }
+
+    public ArrayList<Materia> getMaterias() {
         return materias;
     }
 
-    public void setLista_notas(ArrayList<Materia> materias) {
+    public void setMaterias(ArrayList<Materia> materias) {
         this.materias = materias;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
     }
 
     public Double menor_nota (){
