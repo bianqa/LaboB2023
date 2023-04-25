@@ -1,10 +1,7 @@
-import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.Date;
-import java.text.SimpleDateFormat;
-import java.util.Scanner;
 
 public class Bufe {
     private ArrayList<Pedido> pedidos;
@@ -86,10 +83,13 @@ public class Bufe {
             System.out.println(fecha_pedido);
             if (fecha_hoy.equals(fecha_pedido)){
                 System.out.println("Nombre plato: " + pedido.getPlato().getNombre());
+                SimpleDateFormat hora = new SimpleDateFormat("HH:mm");
+                String hora_pedido = hora.format(pedido.getFecha_hora());
+                System.out.println("Hora : " + hora_pedido);
                 if (pedido.getPersona() instanceof Profesor){
                     double descuento = ((Profesor)pedido.getPersona()).getDescuento();
                     System.out.println("Precio original: " + pedido.getPlato().getPrecio());
-                    System.out.println("Precio con descuento: " + ());
+                    System.out.println("Precio con descuento: " + (pedido.getPlato().getPrecio() - (pedido.getPlato().getPrecio() / 100 * descuento)));
                 }
             }
         }
@@ -97,9 +97,11 @@ public class Bufe {
 
     public static void main(String[] args) {
         Bufe bufe = new Bufe();
-        Date date = new Date(1,(1-1),1,1,1,1);
+        Date date = new Date(2023-1900,(4-1),25,1,1,1);
+        Profesor profesor = new Profesor();
+        Persona persona = profesor;
         System.out.println(date);
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(new Plato(), persona, date, false);
         bufe.agregar_pedido(pedido);
         bufe.mostrar_platos();
     }

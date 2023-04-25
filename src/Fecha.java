@@ -47,6 +47,10 @@ public class Fecha {
         return anio % 4 == 0;
     }
 
+    public String mostrar(){
+        return dia + "/" + mes + "/" + anio;
+    }
+
     public void valida(){
         if (dia > 31){
             dia = 1;

@@ -8,8 +8,6 @@ public class Profesor extends Persona{
         descuento = 20;
     }
 
-
-
     public Profesor (String nombre, int edad, String direccion, String apellido, double descuento){
         super(nombre, edad, direccion);
         this.apellido = apellido;
