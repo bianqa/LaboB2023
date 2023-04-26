@@ -1,6 +1,6 @@
 public class Oficial extends Operario{
 
-    public Oficial (){
+    /*public Oficial (){
         super();
     }
 
@@ -11,5 +11,5 @@ public class Oficial extends Operario{
     @Override
     public String toString() {
         return getClass().getSuperclass().getSuperclass().getCanonicalName() + " " + getNombre() + " -> " + getClass().getSuperclass().getCanonicalName() + " -> " + getClass().getCanonicalName();
-    }
+    }*/
 }

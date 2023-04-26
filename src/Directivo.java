@@ -1,6 +1,6 @@
 public class Directivo extends Empleado{
 
-    public Directivo (){
+    /*public Directivo (){
         super();
     }
 
@@ -11,5 +11,5 @@ public class Directivo extends Empleado{
     @Override
     public String toString() {
         return super.toString() + " -> " + getClass().getCanonicalName();
-    }
+    }*/
 }

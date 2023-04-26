@@ -1,6 +1,6 @@
 public class Empleado extends Persona{
     private String apellido;
-    private int dni;
+    private long dni;
     private String pais;
     private String nro_telefono;
 
@@ -20,11 +20,11 @@ public class Empleado extends Persona{
         this.apellido = apellido;
     }
 
-    public int getDni() {
+    public long getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(long dni) {
         this.dni = dni;
     }
 

@@ -1,6 +1,6 @@
 public class Tecnico extends Operario{
 
-    public Tecnico (){
+    /*public Tecnico (){
         super();
     }
 
@@ -11,5 +11,5 @@ public class Tecnico extends Operario{
     @Override
     public String toString() {
         return getClass().getSuperclass().getSuperclass().getCanonicalName() + " " + getNombre() + " -> " + getClass().getSuperclass().getCanonicalName() + " -> " + getClass().getCanonicalName();
-    }
+    }*/
 }
