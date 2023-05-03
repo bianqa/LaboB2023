@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Equipo {
@@ -6,17 +5,19 @@ public class Equipo {
     private String barrio;
     private Jugador capitan;
     private ArrayList<Jugador> jugadores;
-    private ArrayList<Horario> horarios;
+    private Dia dia;
+    private Horario horario;
 
-    public Equipo (String nombre, String barrio, Jugador capitan, ArrayList<Horario> horarios){
-        this.nombre = nombre;
-        this.barrio = barrio;
-        this.capitan = capitan;
-        this.jugadores = new ArrayList<Jugador>();
-        this.horarios = horarios;
+    public Equipo (){
+        nombre = "a";
+        barrio = "Palermo";
+        capitan = new Jugador();
+        jugadores = new ArrayList<Jugador>();
+        dia = Dia.DOMINGO;
+        horario = Horario.MANANA;
     }
 
-    public Equipo (String nombre, String barrio, Jugador capitan, ArrayList<Jugador> jugadores, ArrayList<Horario> horarios){
+    public Equipo (String nombre, String barrio, Jugador capitan, ArrayList<Jugador> jugadores, Dia dia, Horario horario){
         this.nombre = nombre;
         this.barrio = barrio;
         if (verificar_camiseta(jugadores, capitan)){
@@ -30,7 +31,8 @@ public class Equipo {
             this.capitan = capitan;
             this. jugadores = jugadores;
         }
-        this.horarios = horarios;
+        this.dia = dia;
+        this.horario = horario;
     }
 
     public String getNombre() {
@@ -65,12 +67,20 @@ public class Equipo {
         this.jugadores = jugadores;
     }
 
-    public ArrayList<Horario> getHorarios() {
-        return horarios;
+    public Dia getDia() {
+        return dia;
     }
 
-    public void setHorarios(ArrayList<Horario> horarios) {
-        this.horarios = horarios;
+    public void setDia(Dia dia) {
+        this.dia = dia;
+    }
+
+    public Horario getHorario() {
+        return horario;
+    }
+
+    public void setHorario(Horario horario) {
+        this.horario = horario;
     }
 
     public boolean verificar_camiseta (ArrayList<Jugador> jugadores, Jugador capitan){

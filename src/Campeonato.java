@@ -42,20 +42,7 @@ public class Campeonato {
             } else {
                 System.out.println("Sábado:");
             }
-            for (Partido partido : partidos){
-                if (partido.getDia() == i){
-                    if (partido.getHorario().isManana()){
-                        System.out.println("  Mañana:");
-                        System.out.println("  " + partido.getEquipo1().getNombre() + " vs " + partido.getEquipo2().getNombre());
-                    } else if (partido.getHorario().isTarde()){
-                        System.out.println("  Tarde:");
-                        System.out.println("  " + partido.getEquipo1().getNombre() + " vs " + partido.getEquipo2().getNombre());
-                    } else if (partido.getHorario().isNoche()){
-                        System.out.println("  Noche:");
-                        System.out.println("  " + partido.getEquipo1().getNombre() + " vs " + partido.getEquipo2().getNombre());
-                    }
-                }
-            }
+
         }
     }
 

@@ -1,0 +1,3 @@
+public enum Dia {
+    DOMINGO, LUNES, MARTES, MIERCOLES, VIERNES, SABADO
+}
