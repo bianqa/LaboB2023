@@ -1,19 +1,19 @@
 public class Vehiculo {
     private String marca;
     private String modelo;
-    private String color;
+    private Color color;
     private int cant_ruedas;
     private int anio_fabricacion;
 
     public Vehiculo (){
         marca = "";
         modelo = "";
-        color = "";
+        color = Color.ROJO;
         cant_ruedas = 4;
         anio_fabricacion = 2000;
     }
 
-    public Vehiculo (String marca, String modelo, String color, int cant_ruedas, int anio_fabricacion){
+    public Vehiculo (String marca, String modelo, Color color, int cant_ruedas, int anio_fabricacion){
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -37,11 +37,11 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

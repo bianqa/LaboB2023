@@ -1,6 +1,4 @@
 import java.util.Date;
-
-
 public class Pedido {
     private Plato plato;
     private Persona persona;

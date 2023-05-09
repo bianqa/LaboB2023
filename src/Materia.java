@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class Materia {
     private String nombre;
     private ArrayList<Double> notas;
