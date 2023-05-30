@@ -1,13 +1,20 @@
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+
 public class Empresa {
     private ArrayList<Vehiculo> vehiculos;
+    private HashSet<Empleado> empleados;
 
     public Empresa (){
         vehiculos = new ArrayList<Vehiculo>();
+        empleados = new HashSet<Empleado>();
     }
 
-    public Empresa (ArrayList<Vehiculo> vehiculos){
+    public Empresa (ArrayList<Vehiculo> vehiculos, HashSet<Empleado> empleados){
         this.vehiculos = vehiculos;
+        this.empleados = empleados;
     }
 
     public ArrayList<Vehiculo> getVehiculos() {
@@ -16,6 +23,14 @@ public class Empresa {
 
     public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
         this.vehiculos = vehiculos;
+    }
+
+    public HashSet<Empleado> getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(HashSet<Empleado> empleados) {
+        this.empleados = empleados;
     }
 
     public void mas_cantidad(){
@@ -63,6 +78,17 @@ public class Empresa {
         return cant_descapotables;
     }
 
+    public double asistencias_porcentaje (int anio, int mes){
+        double porcentaje = 0;
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date(anio-1900, mes-1, 1));
+        int month = cal.get(Calendar.MONTH);
+        for (Empleado empleado : empleados){
+            porcentaje += empleado.porcentaje_asistencias(anio, mes);
+        }
+        return porcentaje / empleados.size();
+    }
+
     public static void main(String[] args) {
         ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
         Camioneta c1 = new Camioneta();
@@ -75,7 +101,8 @@ public class Empresa {
         vehiculos.add(a1);
         vehiculos.add(a2);
         vehiculos.add(a3);
-        Empresa empresa = new Empresa(vehiculos);
+        Empresa empresa = new Empresa();
+        empresa.setVehiculos(vehiculos);
         empresa.mas_cantidad();
         empresa.aniadir_carga(c2, 200);
         System.out.println(empresa.autos_descapotables());
