@@ -1,16 +1,22 @@
 public class Persona {
     private String nombre;
+    private String apellido;
+    private Fecha nacimiento;
     private int edad;
     private String direccion;
 
     public Persona (){
         nombre = "";
+        apellido = "";
+        nacimiento = new Fecha();
         edad = 1;
         direccion = "";
     }
 
-    public Persona (String nombre, int edad, String direccion){
+    public Persona (String nombre, String apellido, Fecha nacimiento, int edad, String direccion){
         this.nombre = nombre;
+        this.apellido = apellido;
+        this.nacimiento = nacimiento;
         this.edad = edad;
         this.direccion = direccion;
     }
@@ -21,6 +27,22 @@ public class Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public Fecha getNacimiento() {
+        return nacimiento;
+    }
+
+    public void setNacimiento(Fecha nacimiento) {
+        this.nacimiento = nacimiento;
     }
 
     public int getEdad() {
