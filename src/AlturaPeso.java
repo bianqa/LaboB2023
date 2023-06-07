@@ -40,6 +40,27 @@ public class AlturaPeso {
         }
     }
 
+    public void promedio_anio (int anio){
+        double promedio_altura = 0, promedio_peso = 0;
+        int cont_altura = 0, cont_peso = 0;
+        for (Paciente paciente : pacientes){
+            for (Fecha fecha : paciente.getPeso().keySet()){
+                if (fecha.getAnio() == anio){
+                    promedio_peso += paciente.getPeso().get(fecha);
+                    cont_peso ++;
+                }
+            }
+            for (Fecha fecha : paciente.getAltura().keySet()){
+                if (fecha.getAnio() == anio){
+                    promedio_altura += paciente.getAltura().get(fecha);
+                    cont_altura ++;
+                }
+            }
+        }
+        System.out.println("Promedio peso de " + anio + ": " + (promedio_peso / cont_peso));
+        System.out.println("Promedio altura de " + anio + ": " + (promedio_altura / cont_altura));
+    }
+
     public double porcentaje_altura (Paciente paciente_ingresado, int anio1, int anio2){
         Fecha menor, mayor;
         double porcentaje = 0;

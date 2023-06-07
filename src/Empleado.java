@@ -3,39 +3,19 @@ import java.util.Date;
 import java.util.HashSet;
 
 public class Empleado extends Persona{
-    private String apellido;
-    private Fecha nacimiento;
     private long dni;
     private String pais;
     private String nro_telefono;
     private HashSet<Dia> diasPorSemana;
     private HashSet<Date> asistencias;
 
-    public Empleado (){
+    public Empleado () {
         super();
-        apellido = "";
-        nacimiento = new Fecha();
         dni = 11111111;
         pais = "Argentina";
         nro_telefono = "+54 11 9 1111 1111";
         diasPorSemana = new HashSet<Dia>();
         asistencias = new HashSet<Date>();
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public Fecha getNacimiento() {
-        return nacimiento;
-    }
-
-    public void setNacimiento(Fecha nacimiento) {
-        this.nacimiento = nacimiento;
     }
 
     public long getDni() {

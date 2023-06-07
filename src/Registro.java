@@ -1,32 +1,33 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Registro {
-    private ArrayList<Llamada> llamadas;
-    private ArrayList<Empleado> empleados;
+    private HashSet<Llamada> llamadas;
+    private HashSet<Empleado> empleados;
 
     public Registro (){
-        llamadas = new ArrayList<Llamada>();
-        empleados = new ArrayList<Empleado>();
+        llamadas = new HashSet<Llamada>();
+        empleados = new HashSet<Empleado>();
     }
 
-    public Registro (ArrayList<Llamada> llamadas, ArrayList<Empleado> empleados){
+    public Registro (HashSet<Llamada> llamadas, HashSet<Empleado> empleados){
         this.llamadas = llamadas;
         this.empleados = empleados;
     }
 
-    public ArrayList<Llamada> getLlamadas() {
+    public HashSet<Llamada> getLlamadas() {
         return llamadas;
     }
 
-    public void setLlamadas(ArrayList<Llamada> llamadas) {
+    public void setLlamadas(HashSet<Llamada> llamadas) {
         this.llamadas = llamadas;
     }
 
-    public ArrayList<Empleado> getEmpleados() {
+    public HashSet<Empleado> getEmpleados() {
         return empleados;
     }
 
-    public void setEmpleados(ArrayList<Empleado> empleados) {
+    public void setEmpleados(HashSet<Empleado> empleados) {
         this.empleados = empleados;
     }
 
