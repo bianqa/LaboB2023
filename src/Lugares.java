@@ -1,51 +1,45 @@
 import java.util.HashSet;
 
 public class Lugares {
-    private HashSet<Continente> continentes;
+    private HashSet<Lugar> lugares;
 
     public Lugares (){
-        continentes = new HashSet<Continente>();
+        lugares = new HashSet<Lugar>();
     }
 
-    public Lugares (HashSet<Continente> continentes){
-        this.continentes = continentes;
+    public Lugares (HashSet<Lugar> lugares){
+        this.lugares = lugares;
     }
 
-    public HashSet<Continente> getContinentes() {
-        return continentes;
+    public HashSet<Lugar> getLugares() {
+        return lugares;
     }
 
-    public void setContinentes(HashSet<Continente> continentes) {
-        this.continentes = continentes;
+    public void setLugares(HashSet<Lugar> lugares) {
+        this.lugares = lugares;
     }
 
-    public void agregar_continente (Continente continente){
-        continentes.add(continente);
+    public void agregar_lugar (Lugar lugar){
+        lugares.add(lugar);
     }
 
-    public void eliminar_continente (Continente continente){
-        continentes.remove(continente);
+    public void eliminar_lugar (Lugar lugar){
+        lugares.remove(lugar);
     }
 
-    public void modificar_continente (Continente continente_viejo, Continente continente_nuevo){
-        if (continentes.contains(continente_viejo)){
-            continentes.remove(continente_viejo);
-            continentes.add(continente_nuevo);
+    public void modificar_lugar (Lugar lugar_viejo, Lugar lugar_nuevo){
+        if (lugares.contains(lugar_viejo)){
+            lugares.remove(lugar_viejo);
+            lugares.add(lugar_nuevo);
         }
     }
 
     public int cant_poblacion (int codigo){
         int total = 0;
-        for (Continente continente : continentes){
-            if (continente.getCodigo() == codigo){
-                total += continente.cant_poblacion();
+        for (Lugar lugar : lugares){
+            if (lugar.getCodigo() == codigo){
+                lugar.
             }
         }
-        if (total == 0){
-            for (Continente continente : continentes){
-                total = continente.cant_poblacion1(codigo);
-            }
-        }
-        return total;
     }
 }

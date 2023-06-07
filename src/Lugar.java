@@ -1,23 +1,21 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Lugar {
     private String nombre;
     private int codigo;
-    private ArrayList<String> latitud;
-    private ArrayList<String> longitud;
+    private HashSet<Coordenada> coordenadas;
 
     public Lugar (){
         nombre = "";
         codigo = 1;
-        latitud = new ArrayList<String>();
-        longitud = new ArrayList<String>();
+        coordenadas = new HashSet<Coordenada>();
     }
 
-    public Lugar (String nombre, int codigo, ArrayList<String> latitud, ArrayList<String> longitud){
+    public Lugar (String nombre, int codigo, HashSet<Coordenada> coordenadas){
         this.nombre = nombre;
         this.codigo = codigo;
-        this.latitud = latitud;
-        this.longitud = longitud;
+        this.coordenadas = coordenadas;
     }
 
     public String getNombre() {
@@ -36,23 +34,15 @@ public class Lugar {
         this.codigo = codigo;
     }
 
-    public ArrayList<String> getLatitud() {
-        return latitud;
+    public HashSet<Coordenada> getCoordenadas() {
+        return coordenadas;
     }
 
-    public void setLatitud(ArrayList<String> latitud) {
-        this.latitud = latitud;
+    public void setCoordenadas(HashSet<Coordenada> coordenadas) {
+        this.coordenadas = coordenadas;
     }
 
-    public ArrayList<String> getLongitud() {
-        return longitud;
-    }
-
-    public void setLongitud(ArrayList<String> longitud) {
-        this.longitud = longitud;
-    }
-
-    public void agregar_lugar(){
+    public int cant_poblacion (){
 
     }
 }

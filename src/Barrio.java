@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Barrio extends Lugar{
     private int poblacion;
@@ -8,8 +9,8 @@ public class Barrio extends Lugar{
         poblacion = 0;
     }
 
-    public Barrio (String nombre, int codigo, ArrayList<String> latitud, ArrayList<String> longitud, int poblacion){
-        super(nombre, codigo, latitud, longitud);
+    public Barrio (String nombre, int codigo, HashSet<Coordenada> coordenadas){
+        super(nombre, codigo, coordenadas);
         this.poblacion = poblacion;
     }
 
