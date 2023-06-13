@@ -9,7 +9,7 @@ public class Jugador extends Persona{
     }
 
     public Jugador (String nombre, int edad, String direccion, Fecha fecha_nacimiento, int nro_camiseta){
-        super(nombre, edad, direccion);
+        /*super(nombre, edad, direccion);*/
         this.fecha_nacimiento = fecha_nacimiento;
         this.nro_camiseta = nro_camiseta;
     }

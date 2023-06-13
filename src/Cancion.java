@@ -9,7 +9,7 @@ public class Cancion {
 
     public Cancion (){
         titulo = "";
-        autor = new Persona("", 0, "");
+        autor = new Persona("", "", new Fecha(), 1, "");
     }
 
     public String getTitulo() {

@@ -46,9 +46,9 @@ public class Arrays {
         System.out.println("");
         System.out.println("---EJERCICIO 3---");
         ArrayList<Persona> personas = new ArrayList<Persona>();
+        /*personas.add(new Persona(entrada.nextLine(), entrada.nextInt(), entrada.nextLine()));
         personas.add(new Persona(entrada.nextLine(), entrada.nextInt(), entrada.nextLine()));
-        personas.add(new Persona(entrada.nextLine(), entrada.nextInt(), entrada.nextLine()));
-        personas.add(new Persona(entrada.nextLine(), entrada.nextInt(), entrada.nextLine()));
+        personas.add(new Persona(entrada.nextLine(), entrada.nextInt(), entrada.nextLine()));*/
         for (Persona persona : personas){
             if (persona.getEdad() > 30){
                 persona.mostrar_datos();

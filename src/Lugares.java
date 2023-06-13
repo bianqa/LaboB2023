@@ -34,12 +34,12 @@ public class Lugares {
         }
     }
 
-    public int cant_poblacion (int codigo){
+    /*public int cant_poblacion (int codigo){
         int total = 0;
         for (Lugar lugar : lugares){
             if (lugar.getCodigo() == codigo){
                 lugar.
             }
         }
-    }
+    }*/
 }

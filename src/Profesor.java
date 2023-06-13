@@ -9,7 +9,7 @@ public class Profesor extends Persona{
     }
 
     public Profesor (String nombre, int edad, String direccion, String apellido, double descuento){
-        super(nombre, edad, direccion);
+        /*super(nombre, edad, direccion);*/
         this.apellido = apellido;
         if (descuento < 0){
             this.descuento = 0;

@@ -15,7 +15,7 @@ public class Alumno extends Persona{
     }
 
     public Alumno (String nombre, int edad, String direccion, String apellido, Fecha fecha_nacimiento, ArrayList<Materia> materias, String division){
-        super(nombre, edad, direccion);
+        /*super(nombre, edad, direccion);*/
         this.apellido = apellido;
         this.fecha_nacimiento = fecha_nacimiento;
         this.materias = materias;

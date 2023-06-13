@@ -42,7 +42,7 @@ public class Lugar {
         this.coordenadas = coordenadas;
     }
 
-    public int cant_poblacion (){
+    /*public int cant_poblacion (){
 
-    }
+    }*/
 }
