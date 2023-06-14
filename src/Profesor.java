@@ -1,16 +1,13 @@
 public class Profesor extends Persona{
-    private String apellido;
     private double descuento;
 
     public Profesor (){
         super();
-        apellido = "";
         descuento = 20;
     }
 
-    public Profesor (String nombre, int edad, String direccion, String apellido, double descuento){
-        /*super(nombre, edad, direccion);*/
-        this.apellido = apellido;
+    public Profesor (String nombre, int edad, String direccion, String apellido, Fecha nacimiento, double descuento){
+        super(nombre, apellido, nacimiento, edad, direccion);
         if (descuento < 0){
             this.descuento = 0;
         } else if (descuento > 100){
@@ -18,14 +15,6 @@ public class Profesor extends Persona{
         } else{
             this.descuento = descuento;
         }
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
     }
 
     public double getDescuento() {
