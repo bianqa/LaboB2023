@@ -1,0 +1,76 @@
+import java.beans.ParameterDescriptor;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class SistemaMascotas {
+    private HashSet<Mascota> mascotas;
+
+    public SistemaMascotas (){
+        mascotas = new HashSet<Mascota>();
+    }
+    public SistemaMascotas (HashSet<Mascota> mascotas){
+        this.mascotas = mascotas;
+    }
+
+    public HashSet<Mascota> getMascotas() {
+        return mascotas;
+    }
+
+    public void setMascotas(HashSet<Mascota> mascotas) {
+        this.mascotas = mascotas;
+    }
+
+    public void agregarMascota (String nombre, Duenio duenio, TipoMascota tipoMascota){
+        if (tipoMascota.equals(TipoMascota.PERRO)){
+            mascotas.add((Mascota) new Perro(nombre, duenio));
+        } else if (tipoMascota.equals(TipoMascota.GATO)){
+            mascotas.add((Mascota) new Gato(nombre, duenio));
+        } else if (tipoMascota.equals(TipoMascota.PAJARITO)){
+            mascotas.add((Mascota) new Pajarito(nombre, duenio));
+        } else if (tipoMascota.equals(TipoMascota.CANTOR)){
+            String canto;
+            Scanner entrada = new Scanner(System.in);
+            System.out.println("Ingrese canto");
+            canto = entrada.nextLine();
+            mascotas.add((Mascota) new Cantor(nombre, duenio, canto));
+        } else if (tipoMascota.equals(TipoMascota.PEZ)){
+            int vidas;
+            Scanner entrada = new Scanner(System.in);
+            System.out.println("Ingrese vidas");
+            vidas = entrada.nextInt();
+            mascotas.add((Mascota) new Pez(nombre, duenio, vidas));
+        }
+    }
+
+    public void eliminarMascota(Mascota mascota){
+        mascotas.remove(mascota);
+    }
+
+    public void modificarMascota (Mascota vieja, Mascota nueva){
+        mascotas.remove(vieja);
+        mascotas.add(nueva);
+    }
+
+    public void duenioSaludar (String nombre, Mascota mascota){
+        if (mascota.getDuenio().getNombre().equals(nombre)){
+            mascota.saludar();
+        } else{
+            if (mascota instanceof Pez){
+                mascota.saludar();
+                if (((Pez) mascota).getVidas() <= 0){
+                    mascotas.remove(mascota);
+                }
+            } else if (mascota instanceof Pajarito){
+                System.out.println("...");
+            } else{
+                mascota.saludar().toUpperCase();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Duenio a = new Duenio();
+        SistemaMascotas e = new SistemaMascotas();
+        e.agregarMascota("firulais", a, TipoMascota.PERRO);
+    }
+}

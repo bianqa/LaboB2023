@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class Lugar {
+abstract class Lugar {
     private String nombre;
     private int codigo;
     private HashSet<Coordenada> coordenadas;
@@ -42,7 +42,5 @@ public class Lugar {
         this.coordenadas = coordenadas;
     }
 
-    /*public int cant_poblacion (){
-
-    }*/
+    abstract int cant_poblacion();
 }

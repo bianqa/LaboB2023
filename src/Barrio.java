@@ -21,4 +21,8 @@ public class Barrio extends Lugar{
     public void setPoblacion(int poblacion) {
         this.poblacion = poblacion;
     }
+
+    public int cant_poblacion(){
+        return poblacion;
+    }
 }

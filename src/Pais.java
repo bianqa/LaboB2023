@@ -21,4 +21,12 @@ public class Pais extends Lugar{
     public void setProvincias(HashSet<ProvinciaEstado> provincias) {
         this.provincias = provincias;
     }
+
+    public int cant_poblacion(){
+        int cant = 0;
+        for (ProvinciaEstado p : provincias){
+            cant += p.cant_poblacion();
+        }
+        return cant;
+    }
 }

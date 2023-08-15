@@ -21,4 +21,12 @@ public class Continente extends Lugar{
     public void setPaises(HashSet<Pais> paises) {
         this.paises = paises;
     }
+
+    public int cant_poblacion(){
+        int cant = 0;
+        for (Pais p : paises){
+            cant += p.cant_poblacion();
+        }
+        return cant;
+    }
 }

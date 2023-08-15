@@ -1,9 +1,5 @@
-public class FiguraGeometrica {
-    public double calcularPerimetro (){
-        return 0;
-    }
+abstract class FiguraGeometrica {
+    abstract double calcularPerimetro();
 
-    public double calcularArea(){
-        return 0;
-    }
+    abstract double calcularArea();
 }

@@ -1,4 +1,4 @@
-public class Vehiculo {
+abstract class Vehiculo {
     private String marca;
     private String modelo;
     private Color color;

@@ -1,6 +1,7 @@
 package JDBC;
 
 import java.sql.*;
+import java.util.ArrayList;
 //meter la carpeta adentro de src
 
 //antes d ejecutar el codigo hay q ir a File, Project Structure, Modules, el +, 1 JARs or Directories,
@@ -79,8 +80,34 @@ public class BaseDatos {
         }
     }
 
+    public ArrayList<String> obtenerColumnasDeUnaTabla(String nombreTabla) {
+        conectarBase();
+        String consulta = "SHOW COLUMNS FROM " + nombreTabla;
+        ArrayList<String> nombreCampos = new ArrayList<>();
+        try {
+            ResultSet data;
+            PreparedStatement sentenciaSQL = conexion.prepareStatement(consulta);
+            data = sentenciaSQL.executeQuery(consulta);
+            while (data.next() == true) {
+                nombreCampos.add(data.getString("Field"));
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        mostrar(nombreCampos);
+        return nombreCampos;
+    }
+
+    public void mostrar (ArrayList<String> wua){
+        for (String s : wua) {
+            System.out.println(s);
+        }
+    }
+
     public static void main(String[] args) {
         BaseDatos base = new BaseDatos("prueba", "alumno", "alumnoipm");
         base.consultarBase("SELECT * FROM tabla");
+        base.obtenerColumnasDeUnaTabla("tabla");
     }
 }

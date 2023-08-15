@@ -34,12 +34,72 @@ public class Lugares {
         }
     }
 
-    /*public int cant_poblacion (int codigo){
-        int total = 0;
-        for (Lugar lugar : lugares){
-            if (lugar.getCodigo() == codigo){
-                lugar.
+    public int cant_poblacion (int codigo){
+        for (Lugar l : lugares){
+            if (l.getCodigo() == codigo){
+                return l.cant_poblacion();
             }
         }
-    }*/
+        return 0;
+    }
+
+    public Pais paisMasPoblacion(){
+        int mayor = -1;
+        Pais paisMayor = new Pais();
+        for (Lugar l : lugares){
+            if (l instanceof Pais){
+                if (l.cant_poblacion() > mayor){
+                    mayor = l.cant_poblacion();
+                    paisMayor = (Pais) l;
+                }
+            }
+        }
+        return paisMayor;
+    }
+
+    public Pais paisMenosPoblacion(){
+        int menor = 0;
+        boolean primero = true;
+        Pais paisMenor = new Pais();
+        for (Lugar l : lugares){
+            if (l instanceof Pais){
+                if (primero || l.cant_poblacion() < menor){
+                    primero = false;
+                    menor = l.cant_poblacion();
+                    paisMenor = (Pais) l;
+                }
+            }
+        }
+        return paisMenor;
+    }
+
+    public Continente contMasPoblacion(){
+        int mayor = -1;
+        Continente contMayor = new Continente();
+        for (Lugar l : lugares){
+            if (l instanceof Continente){
+                if (l.cant_poblacion() > mayor){
+                    mayor = l.cant_poblacion();
+                    contMayor = (Continente) l;
+                }
+            }
+        }
+        return contMayor;
+    }
+
+    public Continente contMenosPoblacion(){
+        int menor = 0;
+        boolean primero = true;
+        Continente contMenor = new Continente();
+        for (Lugar l : lugares){
+            if (l instanceof  Continente){
+                if (primero || l.cant_poblacion() < menor){
+                    primero = false;
+                    menor = l.cant_poblacion();
+                    contMenor = (Continente) l;
+                }
+            }
+        }
+        return contMenor;
+    }
 }

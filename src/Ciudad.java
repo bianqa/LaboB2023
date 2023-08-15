@@ -21,4 +21,12 @@ public class Ciudad extends Lugar{
     public void setBarrios(HashSet<Barrio> barrios) {
         this.barrios = barrios;
     }
+
+    public int cant_poblacion(){
+        int cant = 0;
+        for (Barrio b : barrios){
+            cant += b.cant_poblacion();
+        }
+        return cant;
+    }
 }

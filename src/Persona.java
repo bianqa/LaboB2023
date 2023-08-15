@@ -1,4 +1,4 @@
-public class Persona {
+abstract class Persona {
     private String nombre;
     private String apellido;
     private Fecha nacimiento;
@@ -6,7 +6,7 @@ public class Persona {
     private String direccion;
 
     public Persona (){
-        nombre = "";
+        nombre = "juancito";
         apellido = "";
         nacimiento = new Fecha();
         edad = 1;
@@ -61,9 +61,9 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public void mostrar_datos(){
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Edad: " + edad);
-        System.out.println("Dirección: " + direccion);
-    }
+    /*public String toString(){
+        return "Nombre: " + nombre
+                "Apellido: " + apellido
+                "Edad: " + edad;
+    }*/
 }

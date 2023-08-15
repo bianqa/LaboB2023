@@ -1,4 +1,4 @@
-public class Componente {
+abstract class Componente {
     private String nombre;
     private String fabricante;
     private String modelo;
