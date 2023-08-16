@@ -13,7 +13,7 @@ public class Cantor extends Pajarito{
     }
 
     public String saludar(){
-        String saludo = null;
+        String saludo = "";
         for (int i = 0; i < getAlegria(); i++){
             saludo = saludo + canto + " ";
         }

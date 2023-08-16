@@ -6,8 +6,8 @@ public class Pez extends Mascota{
         vidas = 10;
     }
 
-    public Pez (String nombre, Duenio duenio, int alegria){
-        super(nombre, duenio, alegria);
+    public Pez (String nombre, Duenio duenio){
+        super(nombre, duenio);
         vidas = 10;
     }
 
@@ -21,12 +21,13 @@ public class Pez extends Mascota{
 
     public String saludar(){
         vidas --;
-        return "se resto una vida";
+        return "se resto una vida glu glu";
     }
 
     public void alimentar(){
         setAlegria(getAlegria()+1);
         vidas ++;
+        System.out.println("+1 vida glu glu");
     }
 
     public String tipo(){

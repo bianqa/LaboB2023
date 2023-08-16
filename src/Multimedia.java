@@ -1,4 +1,4 @@
-public class Multimedia extends Producto{
+abstract class Multimedia extends Producto{
     public Multimedia (){
         super();
     }

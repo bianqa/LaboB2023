@@ -1,6 +1,6 @@
 public class Libro {
     private String titulo;
-    private Persona autor;
+    private Autor autor;
     private String ISBN;
     private int cant_pags;
     private Editorial editorial;
@@ -8,14 +8,14 @@ public class Libro {
 
     public Libro (){
         titulo = "a";
-        autor = new Persona();
+        autor = new Autor();
         ISBN = "111-111-111-111";
         cant_pags = 100;
         editorial = Editorial.INTERZONA;
         fecha_publicacion = new Fecha();
     }
 
-    public Libro (String titulo, Persona autor, String ISBN, int cant_pags, Editorial editorial, Fecha fecha_publicacion){
+    public Libro (String titulo, Autor autor, String ISBN, int cant_pags, Editorial editorial, Fecha fecha_publicacion){
         this.titulo = titulo;
         this.autor = autor;
         this.ISBN = ISBN;
@@ -32,11 +32,11 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public Persona getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(Persona autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
@@ -75,7 +75,7 @@ public class Libro {
     public void mostrar_info(){
         System.out.println("Título: " + titulo);
         System.out.println("Autor: ");
-        autor.mostrar_datos();
+        //autor.mostrar_datos();
         System.out.println("ISBN: " + ISBN);
         System.out.println("Número de páginas: " + cant_pags);
         System.out.println("Editorial: " + editorial.name());

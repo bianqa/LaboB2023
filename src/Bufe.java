@@ -99,7 +99,7 @@ public class Bufe {
         Bufe bufe = new Bufe();
         Date date = new Date(2023-1900,(4-1),25,1,1,1);
         Profesor profesor = new Profesor();
-        Persona persona = profesor;
+        ClienteBufe persona = profesor;
         System.out.println(date);
         Pedido pedido = new Pedido(new Plato(), persona, date, false);
         bufe.agregar_pedido(pedido);

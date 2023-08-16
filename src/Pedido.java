@@ -1,18 +1,18 @@
 import java.util.Date;
 public class Pedido {
     private Plato plato;
-    private Persona persona;
+    private ClienteBufe persona;
     private Date fecha_hora;
     private boolean entregado;
 
     public Pedido (){
         plato = new Plato();
-        persona = new Persona();
+        persona = new ClienteBufe();
         fecha_hora = new Date((2023-1900),(4-1), 19, 1, 1 , 0);
         entregado = false;
     }
 
-    public Pedido (Plato plato, Persona persona, Date fecha_hora, boolean entregado){
+    public Pedido (Plato plato, ClienteBufe persona, Date fecha_hora, boolean entregado){
         this.plato = plato;
         this.persona = persona;
         this.fecha_hora = fecha_hora;
@@ -27,11 +27,11 @@ public class Pedido {
         this.plato = plato;
     }
 
-    public Persona getPersona() {
+    public ClienteBufe getPersona() {
         return persona;
     }
 
-    public void setPersona(Persona persona) {
+    public void setPersona(ClienteBufe persona) {
         this.persona = persona;
     }
 

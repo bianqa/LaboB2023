@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Alumno extends Persona{
+public class Alumno extends ClienteBufe{
     private ArrayList<Materia> materias;
     private String division;
 

@@ -1,4 +1,5 @@
 import java.beans.ParameterDescriptor;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -34,11 +35,7 @@ public class SistemaMascotas {
             canto = entrada.nextLine();
             mascotas.add((Mascota) new Cantor(nombre, duenio, canto));
         } else if (tipoMascota.equals(TipoMascota.PEZ)){
-            int vidas;
-            Scanner entrada = new Scanner(System.in);
-            System.out.println("Ingrese vidas");
-            vidas = entrada.nextInt();
-            mascotas.add((Mascota) new Pez(nombre, duenio, vidas));
+            mascotas.add((Mascota) new Pez(nombre, duenio));
         }
     }
 
@@ -53,17 +50,18 @@ public class SistemaMascotas {
 
     public void duenioSaludar (String nombre, Mascota mascota){
         if (mascota.getDuenio().getNombre().equals(nombre)){
-            mascota.saludar();
+            System.out.println(mascota.saludar());
         } else{
             if (mascota instanceof Pez){
-                mascota.saludar();
+                System.out.println(mascota.saludar());
                 if (((Pez) mascota).getVidas() <= 0){
                     mascotas.remove(mascota);
+                    System.out.println("MURIO " + mascota.getNombre() + "..............");
                 }
             } else if (mascota instanceof Pajarito){
                 System.out.println("...");
             } else{
-                mascota.saludar().toUpperCase();
+                System.out.println(mascota.saludar().toUpperCase());
             }
         }
     }
@@ -72,5 +70,24 @@ public class SistemaMascotas {
         Duenio a = new Duenio();
         SistemaMascotas e = new SistemaMascotas();
         e.agregarMascota("firulais", a, TipoMascota.PERRO);
+        e.agregarMascota("fifi", a, TipoMascota.PEZ);
+        e.agregarMascota("lulu", a, TipoMascota.PAJARITO);
+        e.agregarMascota("juan", a, TipoMascota.CANTOR);
+        e.agregarMascota("si", a, TipoMascota.GATO);
+        ArrayList<Mascota> m = new ArrayList<Mascota>();
+        for (Mascota ma : e.getMascotas()){
+            e.duenioSaludar("juancito", ma);
+            if (ma instanceof Pez){
+                ((Pez)ma).alimentar();
+            }
+        }
+        for (Mascota ma : e.getMascotas()){
+            e.duenioSaludar("a", ma);
+            if (ma instanceof Pez){
+                for (int i = 0 ; i < 9 ; i++){
+                    e.duenioSaludar("a", ma);
+                }
+            }
+        }
     }
 }

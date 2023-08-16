@@ -2,22 +2,20 @@ abstract class Vehiculo {
     private String marca;
     private String modelo;
     private Color color;
-    private int cant_ruedas;
+    private static int cant_ruedas = 4;
     private int anio_fabricacion;
 
     public Vehiculo (){
         marca = "";
         modelo = "";
         color = Color.ROJO;
-        cant_ruedas = 4;
         anio_fabricacion = 2000;
     }
 
-    public Vehiculo (String marca, String modelo, Color color, int cant_ruedas, int anio_fabricacion){
+    public Vehiculo (String marca, String modelo, Color color, int anio_fabricacion){
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
-        this.cant_ruedas = cant_ruedas;
         this.anio_fabricacion = anio_fabricacion;
     }
 
@@ -45,12 +43,12 @@ abstract class Vehiculo {
         this.color = color;
     }
 
-    public int getCant_ruedas() {
+    public static int getCant_ruedas() {
         return cant_ruedas;
     }
 
-    public void setCant_ruedas(int cant_ruedas) {
-        this.cant_ruedas = cant_ruedas;
+    public static void setCant_ruedas(int cant_ruedas) {
+        Vehiculo.cant_ruedas = cant_ruedas;
     }
 
     public int getAnio_fabricacion() {

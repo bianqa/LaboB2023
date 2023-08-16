@@ -1,4 +1,4 @@
-public class Profesor extends Persona{
+public class Profesor extends ClienteBufe{
     private double descuento;
 
     public Profesor (){

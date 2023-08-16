@@ -1,4 +1,4 @@
-public class AlarmaSensor {
+abstract class AlarmaSensor {
     private boolean conectado;
     private float medida;
     private float umbral;
@@ -50,9 +50,7 @@ public class AlarmaSensor {
         this.anio = anio;
     }
 
-    public void alarma (){
-
-    }
+    abstract void alarma();
 
     public void activar_sensor (){
         if (medida > umbral){
