@@ -93,8 +93,8 @@ public class Empresa {
         ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
         Camioneta c1 = new Camioneta();
         Camioneta c2 = new Camioneta();
-        Coche a1 = new Coche("", "", Color.AMARILLO, 4, 2000, 0, "AAA 111", true);
-        Coche a2 = new Coche("", "", Color.AMARILLO, 4, 2000, 0, "AAA 111", true);
+        Coche a1 = new Coche("", "", Color.AMARILLO, 2000, 0, "AAA 111", true);
+        Coche a2 = new Coche("", "", Color.AMARILLO, 2000, 0, "AAA 111", true);
         Coche a3 = new Coche();
         vehiculos.add(c1);
         vehiculos.add(c2);

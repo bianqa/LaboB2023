@@ -1,4 +1,5 @@
 public class Pajarito extends Mascota{
+    private static String saludo = "pio";
     public Pajarito (){
         super();
     }
@@ -8,12 +9,12 @@ public class Pajarito extends Mascota{
     }
 
     public String saludar(){
-        String saludo = "";
+        String saludo1 = "";
         for (int i = 0; i < getAlegria(); i++){
-            saludo = saludo + "pio ";
+            saludo1 = saludo1 + this.saludo + " " ;
         }
         setAlegria(getAlegria()-1);
-        return saludo;
+        return saludo1;
     }
 
     public void alimentar(){

@@ -1,4 +1,5 @@
 public class Perro extends Mascota{
+    private static String saludo = "guau";
     public Perro (){
         super();
     }
@@ -8,12 +9,12 @@ public class Perro extends Mascota{
     }
 
     public String saludar(){
-        String saludo = "";
+        String saludo1 = "";
         for (int i = 0; i < getAlegria(); i++){
-            saludo = saludo + "guau ";
+            saludo1 = saludo1 + saludo + " ";
         }
         setAlegria(getAlegria()-1);
-        return saludo;
+        return saludo1;
     }
 
     public void alimentar(){

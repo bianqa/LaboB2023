@@ -10,8 +10,8 @@ public class Coche extends Vehiculo{
         descapotable = false;
     }
 
-    public Coche (String marca, String modelo, Color color, int cant_ruedas, int anio_fabricacion, int velocidad, String patente, boolean descapotable){
-        super(marca, modelo, color, cant_ruedas, anio_fabricacion);
+    public Coche (String marca, String modelo, Color color, int anio_fabricacion, int velocidad, String patente, boolean descapotable){
+        super(marca, modelo, color, anio_fabricacion);
         this.velocidad = 0;
         this.patente = patente;
         this.descapotable = descapotable;
