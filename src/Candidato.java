@@ -4,17 +4,17 @@ import java.util.HashMap;
 public class Candidato extends Persona{
     private String dni;
     private NombrePartidos partidoPolitico;
-    private HashMap<String, String> propuestas;
-    private HashMap<String, Integer> votosProvincia;
+    private HashMap<TemaPropuesta, String> propuestas;
+    private HashMap<Provincia, Integer> votosProvincia;
 
     public Candidato (){
         super();
         dni = "20000000";
         partidoPolitico = NombrePartidos.FRENTE_CONSTITUYENTES;
-        propuestas = new HashMap<String, String>();
-        votosProvincia = new HashMap<String, Integer>();
+        propuestas = new HashMap<TemaPropuesta, String>();
+        votosProvincia = new HashMap<Provincia, Integer>();
     }
-    public Candidato (String nombre, String apellido, Fecha nacimiento, int edad, String direccion, String dni, NombrePartidos partidoPolitico, HashMap<String, String> propuestas, HashMap<String, Integer> votosProvincia){
+    public Candidato (String nombre, String apellido, Fecha nacimiento, int edad, String direccion, String dni, NombrePartidos partidoPolitico, HashMap<TemaPropuesta, String> propuestas, HashMap<Provincia, Integer> votosProvincia){
         super(nombre, apellido, nacimiento, edad, direccion);
         this.dni = dni;
         this.partidoPolitico = partidoPolitico;
@@ -38,19 +38,19 @@ public class Candidato extends Persona{
         this.partidoPolitico = partidoPolitico;
     }
 
-    public HashMap<String, String> getPropuestas() {
+    public HashMap<TemaPropuesta, String> getPropuestas() {
         return propuestas;
     }
 
-    public void setPropuestas(HashMap<String, String> propuestas) {
+    public void setPropuestas(HashMap<TemaPropuesta, String> propuestas) {
         this.propuestas = propuestas;
     }
 
-    public HashMap<String, Integer> getVotosProvincia() {
+    public HashMap<Provincia, Integer> getVotosProvincia() {
         return votosProvincia;
     }
 
-    public void setVotosProvincia(HashMap<String, Integer> votosProvincia) {
+    public void setVotosProvincia(HashMap<Provincia, Integer> votosProvincia) {
         this.votosProvincia = votosProvincia;
     }
 

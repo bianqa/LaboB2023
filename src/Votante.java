@@ -1,20 +1,18 @@
 public class Votante extends Persona{
     private String dni;
     private boolean voto;
-    private String nacionalidad;
-    private String provincia;
+    private static String nacionalidad = "Argentina";
+    private Provincia provincia;
 
     public Votante (){
         dni = "30000000";
         voto = false;
-        nacionalidad = "Argentina";
-        provincia = "Buenos Aires";
+        provincia = Provincia.CATAMARCA;
     }
 
-    public Votante (String dni, boolean voto, String nacionalidad, String provincia){
+    public Votante (String dni, boolean voto, Provincia provincia){
         this.dni = dni;
         this.voto = voto;
-        this.nacionalidad = nacionalidad;
         this.provincia = provincia;
     }
 
@@ -34,19 +32,19 @@ public class Votante extends Persona{
         this.voto = voto;
     }
 
-    public String getNacionalidad() {
+    public static String getNacionalidad() {
         return nacionalidad;
     }
 
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
+    public static void setNacionalidad(String nacionalidad) {
+        Votante.nacionalidad = nacionalidad;
     }
 
-    public String getProvincia() {
+    public Provincia getProvincia() {
         return provincia;
     }
 
-    public void setProvincia(String provincia) {
+    public void setProvincia(Provincia provincia) {
         this.provincia = provincia;
     }
 }
