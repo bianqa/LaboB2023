@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 public class Libro {
     private String titulo;
     private Autor autor;
@@ -79,7 +81,7 @@ public class Libro {
         System.out.println("ISBN: " + ISBN);
         System.out.println("Número de páginas: " + cant_pags);
         System.out.println("Editorial: " + editorial.name());
-        System.out.println("Fecha publicación: " + fecha_publicacion.getDia() + "/" + fecha_publicacion.getMes() + "/" + fecha_publicacion.getAnio());
+        System.out.println("Intercambio.Fecha publicación: " + fecha_publicacion.getDia() + "/" + fecha_publicacion.getMes() + "/" + fecha_publicacion.getAnio());
     }
 
     public void comparar_fecha(Libro libro2){

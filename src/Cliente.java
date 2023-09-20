@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 public class Cliente extends Persona{
     private String cuil;
     private int dni;

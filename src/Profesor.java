@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 public class Profesor extends ClienteBufe{
     private double descuento;
 

@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+import Intercambio.Fecha;
+
 import java.util.HashMap;
 
 public class Candidato extends Persona{

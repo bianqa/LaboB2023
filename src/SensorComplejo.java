@@ -50,4 +50,14 @@ public class SensorComplejo {
         System.out.println("Los valores medios superaron el umbral");
     }
 
+    public void obtenerInfo (int num) throws ArrayIndexOutOfBoundsException{
+        ArrayList<AlarmaSensor> alarmas = sensores;
+        System.out.println(alarmas.get(num).getAnio());
+        System.out.println(alarmas.get(num).getUmbral());
+        System.out.println(alarmas.get(num).getMedida());
+    }
+
+    public static void main(String[] args) {
+        
+    }
 }

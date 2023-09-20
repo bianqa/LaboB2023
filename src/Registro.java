@@ -50,7 +50,7 @@ public class Registro {
             for (Llamada llamada : llamadas){
                 if (llamada.getOrigen() == empleado1){
                     cont ++;
-                    System.out.println("- Llamó a " + llamada.getDestino().getNombre() + " " + llamada.getDestino().getApellido() + ". Fecha: " + llamada.getFecha().mostrar() + ". Duración: " + llamada.getDuracion());
+                    System.out.println("- Llamó a " + llamada.getDestino().getNombre() + " " + llamada.getDestino().getApellido() + ". Intercambio.Fecha: " + llamada.getFecha().mostrar() + ". Duración: " + llamada.getDuracion());
                 }
             }
             if (cont == 0){

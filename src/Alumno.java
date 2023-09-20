@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 import java.util.ArrayList;
 
 public class Alumno extends ClienteBufe{

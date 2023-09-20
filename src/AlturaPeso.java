@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 import java.util.HashSet;
 
 public class AlturaPeso {

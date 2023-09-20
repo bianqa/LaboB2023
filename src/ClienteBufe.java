@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 public class ClienteBufe extends Persona{
     public ClienteBufe (){
         super();

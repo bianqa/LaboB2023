@@ -98,15 +98,11 @@ public class CarteleraCine {
                 System.out.println("Pelicula: " + funcion.getPelicula().getTitulo());
                 SimpleDateFormat formato = new SimpleDateFormat("dd/MM HH:mm");
                 String str = formato.format(funcion.getFechaHora());
-                System.out.println("Fecha: " + str);
+                System.out.println("Intercambio.Fecha: " + str);
                 System.out.println("Sala: " + funcion.getSala().getNumero());
                 System.out.println("-----------");
             }
         }
-    }
-
-    public Pelicula peliculaMasVista (){
-        
     }
 
     public static void main(String[] args) {

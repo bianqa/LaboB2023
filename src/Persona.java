@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 abstract class Persona {
     private String nombre;
     private String apellido;

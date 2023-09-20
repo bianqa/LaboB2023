@@ -1,3 +1,5 @@
+import Intercambio.Fecha;
+
 import java.util.HashMap;
 
 public class Paciente extends Persona{
