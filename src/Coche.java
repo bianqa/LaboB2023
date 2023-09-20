@@ -1,3 +1,5 @@
+import Intercambio.Color;
+
 public class Coche extends Vehiculo{
     private int velocidad;
     private String patente;
