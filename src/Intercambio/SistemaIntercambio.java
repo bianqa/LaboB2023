@@ -3,17 +3,17 @@ package Intercambio;
 import java.util.HashSet;
 
 public class SistemaIntercambio{
-    private HashSet<ObjetoIntercambio> objetos;
+    private HashSet<Prestable> objetos;
 
     public SistemaIntercambio (){
         objetos = new HashSet<>();
     }
 
-    public HashSet<ObjetoIntercambio> getObjetos() {
+    public HashSet<Prestable> getObjetos() {
         return objetos;
     }
 
-    public void setObjetos(HashSet<ObjetoIntercambio> objetos) {
+    public void setObjetos(HashSet<Prestable> objetos) {
         this.objetos = objetos;
     }
 

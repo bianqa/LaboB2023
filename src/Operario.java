@@ -1,4 +1,6 @@
-public class Operario extends Empleado{
+import empresaLlamadas.Empleado;
+
+public class Operario extends Empleado {
 
     /*public Operario (){
         super();

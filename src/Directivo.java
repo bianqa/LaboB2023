@@ -1,4 +1,6 @@
-public class Directivo extends Empleado{
+import empresaLlamadas.Empleado;
+
+public class Directivo extends Empleado {
 
     /*public Directivo (){
         super();
