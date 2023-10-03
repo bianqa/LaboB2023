@@ -11,8 +11,8 @@ import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        Ave ave1 = new Ave(Color.ROJO, "pio", true, true);
-        Ave ave2 = new Ave();
+        Paloma ave1 = new Paloma("fwefw", Color.ROJO, "pio", true, true);
+        Paloma ave2 = new Paloma();
         TelefonoMovil telefono1 = new TelefonoMovil(123456, "manzana", "s20", CompaniaTelefonica.CLARO, 1124568789, true, 100.0);
         TelefonoMovil telefono2 = new TelefonoMovil();
         HashMap<Dia, Horario> mapa = new HashMap<>();
