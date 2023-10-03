@@ -12,19 +12,19 @@ import java.util.List;
 
 public class Trabajador extends Persona implements Mensajero{
     private int dni;
-    private int cuil;
+    private String cuil;
     private Double sueldo;
     private HashMap<Dia, Horario> horario;
 
     public Trabajador (){
         super();
         dni = 30000000;
-        cuil = 2030000007;
+        cuil = "2030000007";
         sueldo = 10.0;
         horario = new HashMap<>();
     }
 
-    public Trabajador (String nombre, String apellido, Fecha nacimiento, int edad, String direccion, int dni, int cuil, Double sueldo, HashMap<Dia, Horario> horario){
+    public Trabajador (String nombre, String apellido, Fecha nacimiento, int edad, String direccion, int dni, String cuil, Double sueldo, HashMap<Dia, Horario> horario){
         super(nombre, apellido, nacimiento, edad, direccion);
         this.dni = dni;
         this.cuil = cuil;
@@ -40,11 +40,11 @@ public class Trabajador extends Persona implements Mensajero{
         this.dni = dni;
     }
 
-    public int getCuil() {
+    public String getCuil() {
         return cuil;
     }
 
-    public void setCuil(int cuil) {
+    public void setCuil(String cuil) {
         this.cuil = cuil;
     }
 
@@ -83,5 +83,9 @@ public class Trabajador extends Persona implements Mensajero{
         } else{
             System.out.println("No está en su horario laboral");
         }
+    }
+
+    public void agregarHorario (Dia dia, Horario horario){
+        this.horario.put(dia, horario);
     }
 }

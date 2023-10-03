@@ -10,7 +10,7 @@ public class TelefonoMovil extends Dispositivo implements Mensajero{
         super();
         compania = CompaniaTelefonica.CLARO;
         numero = 234566787;
-        prendido = true;
+        prendido = false;
         credito = 100.0;
     }
 
