@@ -2,7 +2,7 @@ package futbol;
 
 import java.util.HashSet;
 
-public class Equipo implements {
+public class Equipo {
     private String nombre;
     private HashSet<Jugador> jugadores;
 
@@ -30,9 +30,5 @@ public class Equipo implements {
 
     public void setJugadores(HashSet<Jugador> jugadores) {
         this.jugadores = jugadores;
-    }
-
-    public void contratar (Jugador jugador, Equipo e){
-        jugador.contratar(e);
     }
 }

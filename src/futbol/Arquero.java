@@ -40,7 +40,7 @@ public class Arquero extends Jugador{
     @Override
     public boolean contratar(Equipo e) {
         if (!getHistorial().contains(e) && porcentajeAtajadas > 60.0 && golesRecibidos < 10){
-            System.out.println("El " + getNombre() + "arquero" + getPorcentajeAtajadas() + golesRecibidos + " se contrató en el " + e.getNombre());
+            System.out.println("El " + getNombre() + "arquero" + porcentajeAtajadas + golesRecibidos + " se contrató en el " + e.getNombre());
             getHistorial().add(e);
             return true;
         }
@@ -49,6 +49,10 @@ public class Arquero extends Jugador{
 
     @Override
     public boolean renovar(Equipo e) {
-        return getHistorial().get(getHistorial().size()-1).equals(e) && getEdad() < 35;
+        if (getHistorial().get(getHistorial().size()-1).equals(e) && getEdad() < 35){
+            System.out.println("El " + getNombre() + "arquero" + porcentajeAtajadas + golesRecibidos + " se renovó en el " + e.getNombre());
+            return true;
+        }
+        return false;
     }
 }
