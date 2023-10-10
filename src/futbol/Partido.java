@@ -1,19 +1,20 @@
 package futbol;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Partido {
     private Equipo equipo1;
     private Equipo equipo2;
-    private HashMap<Jugador, Integer> goles;
+    private HashSet<Gol> goles;
 
     public Partido (){
         equipo1 = new Equipo();
         equipo2 = new Equipo();
-        goles = new HashMap<>();
+        goles = new HashSet<>();
     }
 
-    public Partido (Equipo equipo1, Equipo equipo2, HashMap<Jugador, Integer> goles){
+    public Partido (Equipo equipo1, Equipo equipo2, HashSet<Gol> goles){
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.goles = goles;
@@ -35,11 +36,11 @@ public class Partido {
         this.equipo2 = equipo2;
     }
 
-    public HashMap<Jugador, Integer> getGoles() {
+    public HashSet<Gol> getGoles() {
         return goles;
     }
 
-    public void setGoles(HashMap<Jugador, Integer> goles) {
+    public void setGoles(HashSet<Gol> goles) {
         this.goles = goles;
     }
 }

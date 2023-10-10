@@ -5,6 +5,7 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 import repaso.elecciones.Provincia;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class JugadorCampo extends Jugador{
     private Double golesConvertidos;
@@ -16,8 +17,8 @@ public class JugadorCampo extends Jugador{
         cantAsistencias = 25;
     }
 
-    public JugadorCampo (String nombre, String apellido, Fecha nacimiento, int edad, String direccion, String posicion, Provincia provincia, ArrayList<Equipo> historial, int numero, Double golesConvertidos, int cantAsistencias){
-        super(nombre, apellido, nacimiento, edad, direccion, posicion, provincia, historial, numero);
+    public JugadorCampo (String nombre, String apellido, Fecha nacimiento, int edad, String direccion, String posicion, Provincia provincia, ArrayList<Equipo> historial, int numero, HashSet<Partido> partidos, Double golesConvertidos, int cantAsistencias){
+        super(nombre, apellido, nacimiento, edad, direccion, posicion, provincia, historial, numero, partidos);
         this.golesConvertidos = golesConvertidos;
         this.cantAsistencias = cantAsistencias;
     }
@@ -40,20 +41,22 @@ public class JugadorCampo extends Jugador{
 
     @Override
     public boolean contratar(Equipo e) {
-        if (!getHistorial().contains(e) && golesConvertidos > 30.0 && cantAsistencias > 10){
-            System.out.println("El " + getNombre() + " jugador campo " + golesConvertidos + cantAsistencias + " se contrató en el " + e.getNombre());
-            getHistorial().add(e);
-            return true;
+        try{
+            if (!getHistorial().contains(e) && golesConvertidos > 30.0 && cantAsistencias > 10){
+                System.out.println("El " + getNombre() + " jugador campo " + golesConvertidos + cantAsistencias + " se contrató en el " + e.getNombre());
+                getHistorial().add(e);
+                return true;
+            } else{
+                throw new CriteriosContratarException("No se puede contratar porque no cumple con los criterios.");
+            }
+        } catch (CriteriosContratarException ex){
+            ex.getMessage();
         }
         return false;
     }
 
     @Override
     public boolean renovar(Equipo e) {
-        if (getHistorial().get(getHistorial().size()-1).equals(e) && getEdad() < 35){
-            System.out.println("El " + getNombre() + "arquero" + golesConvertidos + cantAsistencias + " se renovó en el " + e.getNombre());
-            return true;
-        }
-        return false;
+        return super.renovar(e);
     }
 }
